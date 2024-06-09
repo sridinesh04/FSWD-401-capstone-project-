@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://cdn.pixabay.com/photo/2023/01/25/18/14/clouds-7744217_640.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        #dashboard {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 350px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            font-size: 1em;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #weather {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        #weather h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+        #weather p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard">
+        <h1>Weather Dashboard</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name" />
+        <button onclick="getWeather()">Get Weather</button>
+        <div id="weather">
+            <!-- Weather data will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        const apiKey = '5b995c86d6a2030127120d85adbb3626'; // Replace with your OpenWeatherMap API key
+
+        function getWeather() {
+            const city = document.getElementById('cityInput').value;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === 200) {
+                        const weatherData = `
+                            <h2>${data.name}, ${data.sys.country}</h2>
+                            <p>Temperature: ${data.main.temp} &deg;C</p>
+                            <p>Weather: ${data.weather[0].description}</p>
+                            <p>Humidity: ${data.main.humidity}%</p>
+                            <p>Wind Speed: ${data.wind.speed} m/s</p>
+                        `;
+                        document.getElementById('weather').innerHTML = weatherData;
+                    } else {
+                        document.getElementById('weather').innerHTML = '<p>City not found. Please try again.</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the weather data:', error);
+                    document.getElementById('weather').innerHTML = '<p>Error fetching the weather data. Please try again later.</p>';
+                });
+        }
+    </script>
+</body>
+</html>

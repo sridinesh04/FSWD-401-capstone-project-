@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEBAPDxAPDw8QEA8PDw8PEA8NDw8QFRIWFhUSFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0fHx8tLS0tLy0tLS0tLS0tLS0tLSstLS0tLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tL//AABEIAL4BCgMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAECBQAGB//EADgQAAIBAwIEBAMGBgEFAAAAAAECAAMREgQhEzFBUQUiYXEGgZEUMkJSobEjJIKSwdHxFTRi4fD/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMABAUG/8QAIBEAAwEAAwEBAQEBAQAAAAAAAAERAgMSITFBEyJxBP/aAAwDAQACEQMRAD8A2OPINeImpKmpPd6ny8ND7Qe/7zvtJ7/qZncWdxZuhuppDUHufqZP2g9z9TM0VJdak3U3U0RqD3P1Mn7Q35m/ub/cRFSTxIvUw79oP5m/ub/c7jn8x+piXEkcSHqAe45/MfqZ32k/mb+5v9xA1fWRxZugfR/7SfzN9W/3OOpPc/UzP4nrJFSboAf457n6mdxj3P1MS4ksHm6hHOMe5+pk8T1P1MUDy4aCAGM/WWDesADLgwQDCZTryoMmYBN515EgmYxbKdlKXkEzGCZTsoLKRlNDBcp2UDlIzmhoGznZwGU7KGGgfOdnAZzs5oEx2qSpqRcvKmpOiFoM8SRxIrxJ2cPUZIcFSXWpEg8ItSDqCDy1JOcTV4TiRYCBzUleJAl5UvNDQOXncSLF5GcMNBriSRUioeWzmhoNB4RWiYeXFSCAaHVaXVoktSFWrFaEg4rQgaJrUhVqRGgNDKtLAwAeXDQQEC3nXlMp14AFiZUzpBMJkVMqWnNKXhSCTlILSGfYDte22594ItCkEKWkZwJaRlGgYGLTs4AtIymgYYxaULyjNBlp0QskELSA8GhBIBNgTue0Z8XoJTfGnUFVbA5LcDcC4+UaDfsKipCcT5enaIq8NTrEXt1FjtfY7xYGDavCZxNXhA0EFgwXlS8ETCvp2w4lxY9OwJmgGVznZwDPKGpDDQazkcSKmpIDzdQwbFWW4kFqtQHbJUWmLAYre1wLX3lFaBo0HFeFRokrwq1IvUWDyvDK8RpVRfzXtY8jY36QqVYrQjQ+Hl1eJpUhVeI0I0NhpbKLq0sGiwEDXkXlA068ACzGDJk3g2hQTi0GxnMYNmjIZI4tKFpVmlC0YZIIXnZwJaVzhgYY5aDZpRng2edMLL0uXlc4JmlM4UikGQ0urxQPLq80NB1Hj2lp5GZCVJqeG6oKwJ5XhxmsltOGtX8KdUyKkDvENNrTRdWsHCm4pv5kJ9p6jxT4mR9OKQUAgAX+U8Lqq1zMk9Z/2oyPFdfQmr1Wbs9guRJsNgL9BAZwOUnKLDp6wMGlg0FWUqxVvvKbHcEcgeYJHXvK5zQEGA0tnFQ0sGgaM8jSvLrUiivLhoOoIOLUhkqRBXhUaK0I0aKvDK8QRodXk2hYPK8IHiavG9JvEZNoOqEyG2j1NBaB1CxKKKlpBMGTOyjIaHMYJ5LGDYxgoqxg2aS0CxjodHFpTKVZpTKNAwy9RqFIQKipipDEE3c3vc35He20WZ5QtKM06IVSLM0HlKs0plGLZXgYNGtLSy6keszw0c0utw/Dc+9h84yS/QaT/C1QFWKnmpsbSyVYs9YsSzcybmcGitegS8HftB7ymcBeWDQNtggY3text3ttIyk1Na5prSJ8iEsq2GxPMxbKCGSD5SMoLKTlMGBg0sGgVaWBggGg2UuGgLy6naCCwOrQitF1MIpisDHEaMI0UQwqtJsnBpXjekrWien1DISVNiVZDcK3lYb85yvEaFaPRU9RtA6jUTJXUHvINQnnE6idA5ecHi+UkNGg0DM0oWlcoxpdVw8gVvex526ftNGD4Js0ExlnMolNmYIoLMxAUDcknpHQyBuYHKXrggkEWIJBB5g9RFspRIdIxrxiuWqHJtzYAmwHIW6RFKk9F4BU0+/2jLHE2w55W2nfxcaeW3+Dcmuqph6uozG7m5AC8gNhyG0ULRzxN1yOPLeZxabmwlrwtxuoLnLBovlJDSUKjStLhosGkhoIK0NhpOUWzhA0EBApaXcpguJbiXbMG2AF9sep2gGMYCU+DlkeLkBhj5cbfev39IUhdAgZN4K8kGLDDBW1t1NwG8pyAuOR9ZwMEplxAwDGBxyt5e8sp8sqaxxw2x9t/aGFBhSVypCsTixGxtztAxWQhhVgUhVMQDGEMIDF0MKDEaFgdTLgxdWlw0AocNJzglMLpqqh1NRS6A+ZQcbj3gASHkhoJmFzYWFzYcyB2nBoIAOr2IPaNeJeImswdgqkKFsoAFhM7KSrTQ0JcwYqEEEEgg3BGxBkO0oTGQUgVZ+ZO5PXrFsoWsYtlKIpDBBheKQIsDDKl528b1+F9JA6lQmDJhalIjmIAmHkWr6NlqeE3hKVvxEjYnYXue0DedeKvGMFDS4aBEJiQAbEA8j39oIYIDDKYqDD0zEYrCFpwUyVFyJdoyz4I2DlkexBsDYg2O4NuhEqZAMWGGWqZMWsFuSbKLKL9AO0lYKnCoN4rAwrDaOIxNIAk2HIXNh7RVxtHEH8KJpisEqkcwRsDuCNjuDvLXlQ5O5JJsBcknYchvJvFgGEp3hSDIoR1UDCx/4itCNwUBlwZyUjcg8wbRj7MbXh/m2K9IEp5yuUIE2MWyi9YMGDQtFxkC26g7iK5SwMEA0N6yopa6bC3a1z7QaGB9oWnTNuV/aCGkKO0vpVQuoqMVQkB2AuVXqbReod5CtGSDKdrwoZgjFkBIViLEjoSJn3jOpMRylEOl4YKvvHdNWA5zOp89+XWMvbfG4HS5uQO07uN9X2L7yn4aHiWvWpjiipZQpxv5iPxH1mTlIAk4ym9d/hs4WFETVqFiWNrnsLD6SFueUgiNUAvD2vnkchYWt03i44u+oxm4gEvn+nL0lakoDJ7z1cN9CgxilFVMYpGIkDQ3TaxBha1P8AEOUXEZSmSht3G0vx8b0iGnGLmDBhq9Jl5/tAASXJh5fo+Wmg9IRmmN4KiIdOcgwMvW5TZpinTpn7uoU09vvU8XYfuPoZkV+UepD+XiP4I0JUuUtedSpkjlBuZpA/fg7p5o0B3/8AhMihqLdP8QtTVEiw8o625mD9JvLZraCzVLnkW/zPb+IeC0V0wdWGVh1nzbSaixmz/wBWZlxLEjsY+8PfV51J9Obk43QVWls5HrMhp6PQaY1EqG15j19MReDWbplcaUjEsoRTBssuJJoqFWPaSIx/RCB/BdAdbpCSHsbHY9ryaWgDDYlT6+YTSr+LFKZ0wCkObuSASLcrdpPhGlaoSEFyAWPsOcPxVku2keX19NkJVhYj539R6TMLT0vxWgHCPW1RT3IW1v3M8sWlUjpw+2aZFIbzQ4BC3ttE9KN56Gtq2ekiG2NNSqiwFhe9tp0KfpfkcaMNKcJ9nMYp0956r4d8DSuHyqLTxQv5uvoJ0Y1jOO2vhLk5eh4mrRsIsLjcG09B4nQCttY2I9QZlagXJNgLnkNgPabm/wAu5H491UUJJ5mcIbhyRSkK2/SjaKLD0zaUwllWM2oKw4qj1jnh+vKMrbeU3AIuL+veZzLJRdoccvXz8J6wmjY8Y8T47FiiKxZmZlGN78hbkOszlWS9Qtjf8KhRYAbD/mM+G10SoGqIKijmhuAdj2+X0k+Ta1EvgM56KIimIZOcozXJIFgTylqfORajME1PKaSf9tMzUnabGkqqNK4dMy1MhDkVwa483rEYNAdF4thQqUcEIqWuxUF1sb7HpMuq28qGlahjMyykEpGFJldDgWAqMVTe5UZEbbbe9pDGLAl0aPaZuUzFaOUHtHTE1mn1T4AooablgDvb5WmF8XUaau/D5XP7ynwl4gUo1fYzB1mtLZe5nPx8b/vvd8OXq/FPhXQ+G8YVCHReGhc5Nje3QesTK2vBcU77mXUymzpzl/pRqlozQ1jAbWHrziVYy9Btoo3UZV8je9z16mbGirYAsW4YtYte208jqW37fpIVr87k+u8ovgmuKjvjmu4r3Fwi+VL8yOrfOYRMbrttM8tGRXOYoA0K7iei0dRks6bML2NgbXFjz9DMLw0biekp0/JNvUKbMsLuJpad3UbBrQ1LS4hTbc7k9o7qaCq1qb8RdrPiVvsNre9/pLcfL1RDeq4YVfzHeWp6ANTZyU8rBcDbI36j0mnqdHtmBuOdusnT6baN/Xs/Re3nhiVvDCLEDyk29j2lv+mG17T1v2dBRJa180AE0PFtfQq0aa06SoyqAxFhc25wrlSiWfpP++j5xWoW6Qa05ta2jvFKBKMHAUlTcBgGB+R5ye3H4dOdNoSenJVPLGay9bW625WlQnlk6NRcCcIQIT0MpYg77QGoZDCUzvAoYSkd5oBhtQfLNGmf5f8Ap/zAazw1xpxXNsC+ANxzAva0vTP8v/Sf3gaEt+GWDOflBhoZFvaNnL04OdSlnM3F8CcUBqCtqZ2DdCZi1qZ6D9Y2sJfPRc6WvgENGEfaJuCOYtDUm2iJewZo9b8OseDV9ph1Kmze5nufgLwbjaWu17WuPnjeeF8QTEuOzMPoYuEnvaX1fSGfX/0ArxukdpmU32mjpztA0WkB6iRRbaa7aCtWoZKL06AO4UeUMb3J67zFUEDl1h6irSYLMCqpYZKGGSg43HUXmxX8JPBOqUBaTOVUZAkdbd/nMFzdx7zd11HGnTVKq1c0DlUJODH8B/8AITo48J5QnK2moee1Dc5nkx2tSYlgBcgMx9ABzmaW9IHhpnRn1DfhK7iet0iLZcgWW/mUGxI6gHpPMeCpuJ73w+nQGmfPPj3HDt923W85ebUZuRlqmhzxekjCmx8gPmIHQE9TB1/D2TZlI9xNfRfExppSp8NCqG/KxPrO8d+IVr2IpEEC3NZLvtOTz/pw/wCqYdZ1VCr9dgfn1kJWpKly4O/IXJi2qyc3b5AbAe0E1Ly8oy0U6AtbrTUYbFUX7q7Xv1Y+stRcmdSopg5bPiC3DAAwPe8Jpact/ZpRDrKA6qntM5km5qKe0yaq7xFqjoBXTlK01BXfpDagcoEHyx0wl6TKWUOSEv5ioDED0B5yBTV8wXChQWTK92N9gLcjFmaDyl01BevtOB6RnQapqTh1AvZl8yhl3FusUJuTHaTEqiObqpYquwAvuYqQ7+A9VXYqVubdr7R1G/l/6T+8BqaaleQHqNo94hpODSCh0qAoGDobrY229xM0/olXxGJWUKbK4cWHmAIH6ywqWEVUyajeWHLjpbrUb1PxqoaXCLHAbhb+UHvFi95l6Z4/QUsQo3JIAGw3JsP3lb2JvCyGQA7HcHmIi4xup6G1+8dsVYq2xUkN6W5zM1FfIs3Qm49uX+I3LlJI2Ke++CviN6GmrU1t577nocec8jqqpYO258zH9f8A3DeB1bU29z+xkL4lTGmqUjTUuzgirvkoH4faQ48q6f6/ojTy/PwT06G1/WbNV6eFPBWVsf4hZrhmvzHYRTwwB08trjZh1B9ozrmVQqggtzNugg3iB064P6fXPTRlDGzjzC9gR2MUuCPnBVquwgkq7R85qJ9fTN8SWzXEL4X4jUR1anfMbrsGN/aLeJ1NzBeGVaitxKVw1MZ5bbW5ESmVNQvLmsr4hVJZi3Mkk+8QuPWH1lcuSx3JuSfU84peDX0pnPhveALuJ7bTUvJPH/Dq7ie/0dLyTzf/AEajJ8j9M80OUuNPNZdMNoQaUTl7nG9+mE+ng3o+WblXTCLV6HljLYy0YXC5w+mpR6nw8HVkJqEjB8rBB126yNLSlOw+WCIQJVDIWcgcNsrBDzJt17TArJvPUVqWx9phamnvH42MmZ2qHKKP92aGtWIuPLL5KZE2MEWh2XnFzKL4Og9IriQQ2dxibjEDrcS6PvFwZwbeOmZ5HNVU8sarVL6ZfS8y9S+0Kav8GF/BXn4IBpNRvLAZSKj7QQskMUCLMS1iBdRY+Y9oVdYRzAPztM9Xks8etfDdKM1tWzC2wXsP9ypfyxal5ja9tifpIz2h0tP1hWUbnhNX+G3z/YzNNTY+5l9BWsjRI1Nj84vUVZ/0xyi+0fpvsJjUn2jaVdputBvI9U1VtjykJrBaZ1apKK8dJoXoTq612g0eCqNvKgwe0r18CuYOcTKwDQ//2Q==');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #14821d;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6533e3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Signup</h1>
+        <form id="signup-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="text" id="phone" placeholder="Phone Number">
+            <input type="text" id="address" placeholder="Address">
+            <button type="submit">Signup</button>
+            <a href="signin.ejs" class="btn btn-secondary w-100 mt-3">Already have an account? Login</a>
+        </form>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBA-XRsyU_HZJkWrBh3KW4mz_U4shWWOa0",
+          authDomain: "capstone-project-401.firebaseapp.com",
+          projectId: "capstone-project-401",
+          storageBucket: "capstone-project-401.appspot.com",
+          messagingSenderId: "1054273692155",
+          appId: "1:1054273692155:web:d1c30d59a3c5c90932eb5e",
+          measurementId: "G-MBW2T7ZX88"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        document.getElementById('signup-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            try {
+                // Create user with email and password
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Save user info in Firestore
+                await setDoc(doc(db, 'users', user.uid), {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    address: address
+                });
+
+                // Clear form fields
+                document.getElementById('signup-form').reset();
+
+                // Redirect to login page
+                window.location.href = 'signin.ejs';
+            } catch (error) {
+                console.error('Error signing up:', error);
+                alert('Error signing up: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
